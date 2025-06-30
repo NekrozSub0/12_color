@@ -25,7 +25,7 @@ ev3.speaker.beep()
 
 #Impresión a pantalla
 while 1==1:
-        color = color_sensor.color()
+    color = color_sensor.color()
     ev3.screen.clear()
     ev3.screen.print("El color detectado es: ")
     ev3.screen.print(color)

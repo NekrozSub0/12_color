@@ -22,17 +22,17 @@ contador=0
 
 while 1==1:
     if sensor_color.color()==Color.BLACK:
-        contador=contador+1
         wait(50)
+        contador=contador+1
         print("negro")
         print(contador) 
     if sensor_color.color()==Color.WHITE:
         contador=0
-        if contador > 30:
-            break
+    if contador > 30:
+        break
 
 print("Bucle roto")
-wait(500)
+wait(50)
 
 motorA.stop
 motorB.stop
@@ -43,6 +43,6 @@ print(contador)
 ev3.screen.clear()
 ev3.screen.print("El contador de negro detectado da: ")
 ev3.screen.print(contador)
-wait(3000)
+wait(1000)
 
 print(contador)

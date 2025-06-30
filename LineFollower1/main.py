@@ -7,21 +7,19 @@ from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 
-ev3=EV3Brick()
-motorA=Motor(Port.B)
-motorB=Motor(Port.C)
-sensor_color=ColorSensor(Port.S3)
+# Create your objects here.
+ev3 = EV3Brick()
+ma = Motor (Port. A)
+mc = Motor (Port. C)
+sensor_color =ColorSensor (Port.s3)
+ColorSensor.reflection
+robot =DriveBase(mA, mC, 55.5, 104)
+if sensor_color==color.BLACK
+    print("Color negro")
+    if sensor_color.reflection>50%
+    print("menor de 50")
+    if sensor_color.reflection<50%
+    print("mayor de 50")
 
-motorA.run(300)
-motorB.run(300)
-
-while 1==1:
-    if sensor_color.color()==Color.RED:
-        motorA.stop()
-        motorB.stop()
-        ev3.speaker.beep()
-        wait(1000)
-        motorA.run_time(-300,1000)
-        motorB.run_time(-300,1000)
-        break  
-    wait(500)
+# Write your program here.
+ev3.speaker.beep()
