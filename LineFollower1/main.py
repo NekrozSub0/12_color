@@ -9,17 +9,20 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 
 # Create your objects here.
 ev3 = EV3Brick()
-ma = Motor (Port. A)
-mc = Motor (Port. C)
-sensor_color =ColorSensor (Port.s3)
-ColorSensor.reflection
-robot =DriveBase(mA, mC, 55.5, 104)
-if sensor_color==color.BLACK
-    print("Color negro")
-    if sensor_color.reflection>50%
-    print("menor de 50")
-    if sensor_color.reflection<50%
-    print("mayor de 50")
-
-# Write your program here.
 ev3.speaker.beep()
+MR=Motor(Port.A)
+ML=Motor(Port.D)
+color_sensor=ColorSensor(Port.S1)
+robot=DriveBase(ML,MR,wheel_diameter=55.5,axle_track=104)
+
+while color_sensor.reflection()!=90:
+    reflect=color_sensor.reflection()
+    if reflect<60:
+        robot.drive(20,-50)
+        wait(300)
+    elif reflect>60:
+        robot.drive(20,50)
+        wait(300)
+    ev3.screen.clear()
+    ev3.screen.print(reflect)
+    wait(200)
